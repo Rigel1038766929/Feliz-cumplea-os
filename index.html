@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <title>Feliz Cumpleaños</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link 
+      rel="stylesheet"
+      href="./mobile.css"
+      media="only screen and (max-width: 768px)"
+    />
+  </head>
+
+  <body>
+    <!-- Confeti y frases de atrás -->
+    <canvas id="canvas1"></canvas>
+
+    <div class="contenedor">
+      <div class="portaretrato-torta-caja">
+        <div class="portaretrato">
+          <div class="marco">
+            <img src="./recursos/foto.jpg" alt="Foto de cumpleaños" />
+          </div>
+          <div class="soporte-marco"></div>
+        </div>
+
+        <div class="torta-cumpleaños">
+          <div class="torta">
+            <div class="chocolate"></div>
+          </div>
+          <div class="vela"></div>
+          <div class="llama"></div>
+        </div>
+
+        <div
+          class="caja-wrapper"
+          id="cajaRegalo"
+          role="button"
+          tabindex="0"
+          aria-label="Abrir regalo"
+        >
+          <div class="caja">
+            <div class="cinta-de-regalo">
+              <div class="cinta-de-regalo-izquierda"></div>
+              <div class="cinta-de-regalo-derecha"></div>
+              <div class="cinta-de-regalo-centro"></div>
+            </div>
+            <div class="regalos">
+              <div class="regalo-sombra"></div>
+            </div>
+            <div class="regalo"></div>
+            <div class="icono-estrella estrella1"></div>
+            <div class="icono-estrella estrella2"></div>
+            <div class="icono-estrella estrella3"></div>
+            <div class="icono-estrella estrella4"></div>
+            <div class="icono-estrella estrella5"></div>
+          </div>
+        </div>
+
+        <div class="happy-birthday">Happy Birthday</div>
+      </div>
+      <div class="soporte"></div>
+    </div>
+
+    <div
+      class="modal-carta"
+      id="modalCarta"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    >
+      <div class="contenido-carta">
+        <button
+          type="button"
+          class="cerrar-carta"
+          id="cerrarCarta"
+          aria-label="Cerrar carta"
+        >
+          ×
+        </button>
+
+        <div class="carta">
+          <h2>Querida Alina de Jesus May Ek</h2>
+          <p>
+            En este día tan especial quiero desearte un feliz cumpleaños, lleno de alegría, risas, amor y momentos inolvidables. 🎂🎉✨❤️
+
+Sin pedirlo y sin imaginarlo, llegaste a mi vida y poco a poco te convertiste en la persona más importante para mí. 🥺❤️ Llegaste para hacer mis días más bonitos, para regalarme sonrisas y para ocupar un lugar muy especial en mi corazón. 💕🌹
+
+Hoy deseo de todo corazón que tengas un día hermoso, porque te mereces todo lo bonito de este mundo. 🥰🎁✨ Pero también tengo un deseo muy especial: quiero que siempre estés a mi lado. 🫂❤️ Quiero compartir contigo muchos momentos, muchas aventuras, muchas sonrisas y, sobre todo, muchísimos cumpleaños más. 🎂💞
+
+Mi amor, quiero que seas esa personita que me acompañe durante el resto de mis días. 🥹❤️ Quiero seguir creciendo contigo, creando recuerdos juntos y estando a tu lado tanto en los momentos buenos como en los difíciles. 🫶🏻💗
+
+No quiero que este sea el único cumpleaños que tenga la fortuna de pasar contigo; quiero celebrar muchos más a tu lado, verte cumplir tus sueños y estar ahí para aplaudir cada uno de tus logros. 🎉🌷💖
+
+Te amo muchísimo, mi princesa. 👑❤️ Te amo más de lo que muchas veces puedo expresar con palabras y más de lo que te imaginas. 🥺💘 Gracias por llegar a mi vida y convertirte en alguien tan especial para mí.
+
+🎂🎈 ¡Feliz cumpleaños, mi amor! 🎈🎂
+Que hoy seas muy feliz y nunca olvides cuánto te amo. ❤️‍🩹🥰💋
+
+Te amo como no tienes idea, mi princesa. ❤️👑♾️
+          </p>
+          <p class="firma">
+            Con cariño,<br />
+            Rigel Muñoz
+          </p>
+
+          <button type="button" id="botonVideo" class="boton-video">
+            ▶ Reproducir video
+          </button>
+
+          <div id="contenedorVideo" class="contenedor-video">
+            <video
+              id="videoCumpleanos"
+              controls
+              playsinline
+              preload="metadata"
+            >
+              <source src="./recursos/video.mp4" type="video/mp4" />
+              Tu navegador no puede reproducir el video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confeti y fotos de adelante -->
+    <canvas id="canvas2"></canvas>
+
+    <audio
+      id="soplido"
+      src="./recursos/soplar1.mp3"
+      preload="auto"
+    ></audio>
+
+    <audio
+      id="cancion"
+      src="./recursos/cancion.mp3"
+      preload="auto"
+      loop
+    ></audio>
+
+    <div class="overlay"></div>
+
+    <script src="./Confeti.js"></script>
+    <script src="./Confeti2.js"></script>
+    <script src="./Sorpresa.js"></script>
+  </body>
+</html>
