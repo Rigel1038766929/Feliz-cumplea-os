@@ -764,6 +764,78 @@ body.regalo-abierto {
   .carta p {
     font-size: 16px;
   }
+  /* ===== CORRECCIÓN FINAL PARA CELULAR ===== */
+
+@media (max-width: 768px) {
+
+  html {
+    overflow: auto !important;
+  }
+
+  body.regalo-abierto {
+    overflow: hidden !important;
+  }
+
+  .modal-carta {
+    position: fixed;
+    inset: 0;
+    padding: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal-carta.activo {
+    display: flex;
+  }
+
+  .contenido-carta {
+    width: calc(100vw - 20px);
+    max-width: 480px;
+    height: auto;
+    max-height: none;
+    margin: 10px auto 30px;
+    position: relative;
+  }
+
+  .carta {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 65px 18px 25px;
+    transform: none;
+    box-sizing: border-box;
+  }
+
+  .cerrar-carta {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    width: 48px;
+    height: 48px;
+    z-index: 9999;
+  }
+
+  .boton-video {
+    width: 90%;
+    max-width: 300px;
+    margin: 25px auto 15px;
+  }
+
+  .contenedor-video {
+    width: 100%;
+  }
+
+  #videoCumpleanos {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    margin-bottom: 30px;
+  }
+}
 
   #videoCumpleanos {
     max-height: 45dvh;
