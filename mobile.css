@@ -124,31 +124,69 @@
 }
 
 /* Carta y video adaptados para controles táctiles */
+
 .modal-carta {
+  position: fixed;
+  inset: 0;
   padding: 10px;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-carta .contenido-carta {
   width: calc(100vw - 20px);
-  max-height: calc(100dvh - 20px);
+  max-width: 480px;
+  height: auto;
+  max-height: none;
+  margin: 10px auto 30px;
+  position: relative;
 }
 
 .modal-carta .carta {
   width: 100%;
   max-width: 100%;
-  max-height: calc(100dvh - 20px);
-  padding: 52px 18px 20px;
-  overflow-y: auto;
+  height: auto;
+  max-height: none;
+  padding: 65px 18px 25px;
+  overflow: visible;
   transform: none;
+  box-sizing: border-box;
 }
 
 .modal-carta .cerrar-carta {
-  top: 8px;
-  right: 8px;
-  width: 44px;
-  height: 44px;
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 48px;
+  height: 48px;
+  z-index: 9999;
 }
 
+.boton-video {
+  display: block;
+  width: 90%;
+  max-width: 300px;
+  margin: 25px auto 15px;
+}
+
+.contenedor-video {
+  width: 100%;
+}
+
+#videoCumpleanos {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0 auto 30px;
+  border-radius: 15px;
+}
+
+body.regalo-abierto {
+  overflow: hidden;
+}
 #videoCumpleanos {
   max-height: 45dvh;
 }
