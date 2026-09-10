@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
     modalCarta.style.display = "flex";
     modalCarta.setAttribute("aria-hidden", "false");
     document.body.classList.add("regalo-abierto");
+    
+    modalCarta.scrollTop = 0;
 
     requestAnimationFrame(function () {
       modalCarta.classList.add("activo");
@@ -85,14 +87,26 @@ document.addEventListener("DOMContentLoaded", function () {
     if (evento.key === "Escape" && regaloEstaAbierto()) cerrarRegalo();
   });
 
-  botonVideo.addEventListener("click", function (evento) {
-    evento.preventDefault();
-    evento.stopPropagation();
-    contenedorVideo.classList.add("mostrar");
-    botonVideo.hidden = true;
-    if (cancion) cancion.pause();
+botonVideo.addEventListener("click", function (evento) {
+  evento.preventDefault();
+  evento.stopPropagation();
+
+  contenedorVideo.classList.add("mostrar");
+  botonVideo.hidden = true;
+
+  if (cancion) {
+    cancion.pause();
+  }
+
+  setTimeout(function () {
+    contenedorVideo.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
     videoCumpleanos.play().catch(function () {});
-  });
+  }, 100);
+});
 
   videoCumpleanos.addEventListener("ended", function () {
     if (cancion) cancion.play().catch(function () {});
